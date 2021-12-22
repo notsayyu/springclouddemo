@@ -1,8 +1,8 @@
 package com.notsay.user.service.impl;
 
 import com.notsay.user.domain.dto.OrderSaveDTO;
-import com.notsay.user.domain.entity.PointEntity;
-import com.notsay.user.domain.repo.PointRepo;
+import com.notsay.user.domain.entity.users.PointEntity;
+import com.notsay.user.domain.repo.users.PointRepo;
 import com.notsay.user.service.PointService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

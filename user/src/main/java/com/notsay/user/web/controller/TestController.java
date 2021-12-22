@@ -4,6 +4,11 @@ import com.netflix.discovery.converters.Auto;
 import com.notsay.orderfeignapi.service.OrderApi;
 //import com.notsay.user.web.vo.OrderTestVO;
 import com.notsay.orderfeignapi.service.vo.OrderTestVO;
+import com.notsay.user.domain.entity.order.OrderEntity;
+import com.notsay.user.domain.entity.users.UsersEntity;
+import com.notsay.user.domain.repo.order.OrderRepo;
+import com.notsay.user.domain.repo.users.UsersRepo;
+import com.notsay.user.service.TestService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +33,9 @@ public class TestController {
     @Autowired
     OrderApi orderApi;
 
+    @Autowired
+    TestService testService;
+
     @GetMapping("/test1")
     public String helloTest(){
         String s = orderApi.test1();
@@ -39,6 +47,12 @@ public class TestController {
     public OrderTestVO orderTest(){
         OrderTestVO orderTestVO = orderApi.test2();
         return orderTestVO;
+    }
+
+    @GetMapping("dataSource")
+    public String dataSourceTest(){
+        testService.datasource();
+        return "success";
     }
 
     private static Logger LOG= LogManager.getLogger(Main.class);

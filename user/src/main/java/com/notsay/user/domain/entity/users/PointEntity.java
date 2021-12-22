@@ -1,5 +1,6 @@
-package com.notsay.user.domain.entity;
+package com.notsay.user.domain.entity.users;
 
+import com.notsay.user.domain.entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PointEntity extends BaseEntity{
+public class PointEntity extends BaseEntity {
 
     @Column(name = "order_name", columnDefinition = "varchar(255) comment '订单名称'")
     private String orderName;
